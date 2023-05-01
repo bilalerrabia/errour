@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+  struct node{
+    int valeur;
+    struct node* next;
+  };
+ void add_node(int valeur,struct node* last_node);
+  int main (){
+  struct node* head=NULL;
+    add_node(1967,head);
+        printf("%d ",head->valeur);
+    add_node(1973,head->next);
+        printf("%d ",head->next->valeur);
+    add_node(1980,head->next->next);
+        printf("%d",head->next->next->valeur);
+    add_node(2024,head->next->next->next);
+        printf("%d",head->next->next->next->valeur);
+  }
+    void  add_node(int valeur,struct node* last_node){
+
+        struct node* n=(struct node*)malloc(sizeof(struct node));
+            n->valeur=valeur;
+            n->next=NULL;
+            last_node->next=n;
+      }
